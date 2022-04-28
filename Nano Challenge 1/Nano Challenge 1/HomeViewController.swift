@@ -11,8 +11,12 @@ class HomeViewController: UIViewController{
     
     var plans = ["Work", "Groceries", "School", "Workout", "Family", "Friends", "Medical", "Do Project"]
 
-    @IBOutlet weak var planContainer: UIView!
 
+    var pageTitle : String!
+    
+    
+    @IBOutlet weak var todayTitle: UILabel!
+  
     @IBOutlet weak var planTableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,7 +29,20 @@ class HomeViewController: UIViewController{
     
     
     @IBAction func todayButtonPressed(_ sender: UIButton) {
-        print("success")
+        pageTitle = "Today"
+        performSegue(withIdentifier: "toTaskPage", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTaskPage" {
+            let taskVC = segue.destination as? TaskViewController
+            taskVC?.title = pageTitle
+            
+            
+            // since we already subscribe the delegate from second page, we need to connect it to here
+//            taskVC?.delegate = self
+        }
     }
     
     
@@ -54,4 +71,6 @@ extension HomeViewController : UITableViewDataSource{
         
         return cell
     }
+    
+    
 }

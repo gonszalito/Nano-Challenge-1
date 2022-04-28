@@ -24,6 +24,9 @@
 		4C81F6A5281A516C00270A2C /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6A4281A516C00270A2C /* PlanTableViewCell.swift */; };
 		4C81F6A7281A606900270A2C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6A6281A606900270A2C /* Task.swift */; };
 		4C81F6A9281A63CD00270A2C /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6A8281A63CD00270A2C /* Plan.swift */; };
+		4C81F6AB281A81A700270A2C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6AA281A81A600270A2C /* TaskViewController.swift */; };
+		4C81F6AE281A86EE00270A2C /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6AC281A86EE00270A2C /* Database.xcdatamodeld */; };
+		4C81F6B0281A8EBA00270A2C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6AF281A8EBA00270A2C /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		4C81F6A4281A516C00270A2C /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
 		4C81F6A6281A606900270A2C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		4C81F6A8281A63CD00270A2C /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		4C81F6AA281A81A600270A2C /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		4C81F6AD281A86EE00270A2C /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
+		4C81F6AF281A8EBA00270A2C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,13 +128,16 @@
 				4C81F6A6281A606900270A2C /* Task.swift */,
 				4C81F6A8281A63CD00270A2C /* Plan.swift */,
 				4C81F6A4281A516C00270A2C /* PlanTableViewCell.swift */,
+				4C81F6AF281A8EBA00270A2C /* TaskTableViewCell.swift */,
 				4C81F65D2819DB4300270A2C /* PlanContainerCell.swift */,
 				4C81F6582819CA7D00270A2C /* Components */,
 				4C81F6492819C84C00270A2C /* HomeViewController.swift */,
+				4C81F6AA281A81A600270A2C /* TaskViewController.swift */,
 				4C81F6472819C19E00270A2C /* SplashViewController.swift */,
 				4C81F61A2817929900270A2C /* Assets.xcassets */,
 				4C81F61C2817929900270A2C /* LaunchScreen.storyboard */,
 				4C81F61F2817929900270A2C /* Info.plist */,
+				4C81F6AC281A86EE00270A2C /* Database.xcdatamodeld */,
 			);
 			path = "Nano Challenge 1";
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C81F6A5281A516C00270A2C /* PlanTableViewCell.swift in Sources */,
+				4C81F6B0281A8EBA00270A2C /* TaskTableViewCell.swift in Sources */,
 				4C81F65E2819DB4300270A2C /* PlanContainerCell.swift in Sources */,
 				4C81F64A2819C84C00270A2C /* HomeViewController.swift in Sources */,
 				4C81F6162817929800270A2C /* ViewController.swift in Sources */,
@@ -300,6 +310,8 @@
 				4C81F6122817929800270A2C /* AppDelegate.swift in Sources */,
 				4C81F6142817929800270A2C /* SceneDelegate.swift in Sources */,
 				4C81F6A7281A606900270A2C /* Task.swift in Sources */,
+				4C81F6AB281A81A700270A2C /* TaskViewController.swift in Sources */,
+				4C81F6AE281A86EE00270A2C /* Database.xcdatamodeld in Sources */,
 				4C81F6482819C19E00270A2C /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,6 +648,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C81F6AC281A86EE00270A2C /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C81F6AD281A86EE00270A2C /* Database.xcdatamodel */,
+			);
+			currentVersion = 4C81F6AD281A86EE00270A2C /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4C81F6062817929800270A2C /* Project object */;
 }
