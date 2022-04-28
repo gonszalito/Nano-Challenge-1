@@ -16,6 +16,14 @@
 		4C81F6292817929900270A2C /* Nano_Challenge_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6282817929900270A2C /* Nano_Challenge_1Tests.swift */; };
 		4C81F6332817929900270A2C /* Nano_Challenge_1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6322817929900270A2C /* Nano_Challenge_1UITests.swift */; };
 		4C81F6352817929900270A2C /* Nano_Challenge_1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6342817929900270A2C /* Nano_Challenge_1UITestsLaunchTests.swift */; };
+		4C81F6482819C19E00270A2C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6472819C19E00270A2C /* SplashViewController.swift */; };
+		4C81F64A2819C84C00270A2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6492819C84C00270A2C /* HomeViewController.swift */; };
+		4C81F6562819CA6600270A2C /* PlanContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6542819CA6600270A2C /* PlanContainer.swift */; };
+		4C81F6572819CA6600270A2C /* PlanContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C81F6552819CA6600270A2C /* PlanContainer.xib */; };
+		4C81F65E2819DB4300270A2C /* PlanContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F65D2819DB4300270A2C /* PlanContainerCell.swift */; };
+		4C81F6A5281A516C00270A2C /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6A4281A516C00270A2C /* PlanTableViewCell.swift */; };
+		4C81F6A7281A606900270A2C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6A6281A606900270A2C /* Task.swift */; };
+		4C81F6A9281A63CD00270A2C /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6A8281A63CD00270A2C /* Plan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		4C81F62E2817929900270A2C /* Nano Challenge 1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nano Challenge 1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C81F6322817929900270A2C /* Nano_Challenge_1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano_Challenge_1UITests.swift; sourceTree = "<group>"; };
 		4C81F6342817929900270A2C /* Nano_Challenge_1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano_Challenge_1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4C81F6472819C19E00270A2C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		4C81F6492819C84C00270A2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4C81F6542819CA6600270A2C /* PlanContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanContainer.swift; sourceTree = "<group>"; };
+		4C81F6552819CA6600270A2C /* PlanContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanContainer.xib; sourceTree = "<group>"; };
+		4C81F65D2819DB4300270A2C /* PlanContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanContainerCell.swift; sourceTree = "<group>"; };
+		4C81F6A4281A516C00270A2C /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
+		4C81F6A6281A606900270A2C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		4C81F6A8281A63CD00270A2C /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +119,13 @@
 				4C81F6132817929800270A2C /* SceneDelegate.swift */,
 				4C81F6152817929800270A2C /* ViewController.swift */,
 				4C81F6172817929800270A2C /* Main.storyboard */,
+				4C81F6A6281A606900270A2C /* Task.swift */,
+				4C81F6A8281A63CD00270A2C /* Plan.swift */,
+				4C81F6A4281A516C00270A2C /* PlanTableViewCell.swift */,
+				4C81F65D2819DB4300270A2C /* PlanContainerCell.swift */,
+				4C81F6582819CA7D00270A2C /* Components */,
+				4C81F6492819C84C00270A2C /* HomeViewController.swift */,
+				4C81F6472819C19E00270A2C /* SplashViewController.swift */,
 				4C81F61A2817929900270A2C /* Assets.xcassets */,
 				4C81F61C2817929900270A2C /* LaunchScreen.storyboard */,
 				4C81F61F2817929900270A2C /* Info.plist */,
@@ -125,6 +148,15 @@
 				4C81F6342817929900270A2C /* Nano_Challenge_1UITestsLaunchTests.swift */,
 			);
 			path = "Nano Challenge 1UITests";
+			sourceTree = "<group>";
+		};
+		4C81F6582819CA7D00270A2C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4C81F6542819CA6600270A2C /* PlanContainer.swift */,
+				4C81F6552819CA6600270A2C /* PlanContainer.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C81F6572819CA6600270A2C /* PlanContainer.xib in Resources */,
 				4C81F61E2817929900270A2C /* LaunchScreen.storyboard in Resources */,
 				4C81F61B2817929900270A2C /* Assets.xcassets in Resources */,
 				4C81F6192817929800270A2C /* Main.storyboard in Resources */,
@@ -258,9 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C81F6A5281A516C00270A2C /* PlanTableViewCell.swift in Sources */,
+				4C81F65E2819DB4300270A2C /* PlanContainerCell.swift in Sources */,
+				4C81F64A2819C84C00270A2C /* HomeViewController.swift in Sources */,
 				4C81F6162817929800270A2C /* ViewController.swift in Sources */,
+				4C81F6A9281A63CD00270A2C /* Plan.swift in Sources */,
+				4C81F6562819CA6600270A2C /* PlanContainer.swift in Sources */,
 				4C81F6122817929800270A2C /* AppDelegate.swift in Sources */,
 				4C81F6142817929800270A2C /* SceneDelegate.swift in Sources */,
+				4C81F6A7281A606900270A2C /* Task.swift in Sources */,
+				4C81F6482819C19E00270A2C /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
