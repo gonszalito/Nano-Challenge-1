@@ -1,5 +1,5 @@
 //
-//  CustomPlanContainer.swift
+//  PlanContainerCell.swift
 //  Nano Challenge 1
 //
 //  Created by Jonathan Andryana on 28/04/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomPlanContainer: UIView {
+class PlanContainerCell: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

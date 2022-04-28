@@ -20,7 +20,13 @@ class SplashViewController: UIViewController {
     
     @IBAction
     func doContinueButton(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "goToHome", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToHome" {
+
+        }
     }
     
     func makeRoundedAndShadowed(view: UIButton) {
@@ -46,6 +52,9 @@ class SplashViewController: UIViewController {
         view.layer.shadowOpacity = 0.7
         view.layer.shadowRadius = 4.0
     }
+    
+    
+    
     
     /*
     // MARK: - Navigation

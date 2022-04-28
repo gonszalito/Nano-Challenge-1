@@ -7,15 +7,28 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController{
+    
+    var plans = ["Work", "Groceries", "School", "Workout", "Family", "Friends", "Medical", "Do Project"]
 
+    @IBOutlet weak var planContainer: UIView!
+
+    @IBOutlet weak var planTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        planTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
-
+    
+    
+    @IBAction func todayButtonPressed(_ sender: UIButton) {
+        print("success")
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -26,4 +39,19 @@ class HomeViewController: UIViewController {
     }
     */
 
+}
+
+extension HomeViewController : UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return plans.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = planTableView.dequeueReusableCell(withIdentifier: "planCell") as! PlanTableViewCell
+        
+        let plan = plans[indexPath.row]
+        cell.planTitle.text = plan
+        
+        return cell
+    }
 }
