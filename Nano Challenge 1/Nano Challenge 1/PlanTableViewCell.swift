@@ -24,7 +24,6 @@ class PlanTableViewCell: UITableViewCell {
     }
 
     @IBAction func planCellPressed(_ sender: Any) {
-        print("sucess")
     }
     
     
