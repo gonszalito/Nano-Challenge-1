@@ -13,6 +13,9 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskCheckButton: UIButton!
     @IBOutlet weak var taskTitle: UILabel!
     
+    var checkedStatus : Bool?
+    var checkColor : Bool = false
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,22 +30,36 @@ class TaskTableViewCell: UITableViewCell {
 
     
     @IBAction func clickCheckButton(_ sender: Any) {
-        // corner radius
-        taskCheckButton.layer.cornerRadius = 10
-        taskCheckButton.backgroundColor = UIColor.systemGreen
-        // border
-        taskCheckButton.layer.borderWidth = 0
-        taskCheckButton.layer.borderColor = UIColor.black.cgColor
-
+//        if checkColor == false {
+//            self.backgroundColor = UIColor.systemGreen
+//            self.checkColor = true
+//        }
+//        else {
+//            self.backgroundColor = UIColor.clear
+//            self.checkColor = false
+//        }
+//
+        
     }
     
+    @IBOutlet weak var buttonHolder: UIButton!
     func customButton(view: UIButton) {
-        view.layer.cornerRadius = 20
-        view.layer.masksToBounds = true
-
-        view.layer.shadowColor = UIColor.darkGray.cgColor
-        view.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        view.layer.shadowOpacity = 0.4
-        view.layer.shadowRadius = 5.0
+        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor.systemGreen
+        // border
+        view.layer.borderWidth = 0
+        view.layer.borderColor = UIColor.black.cgColor
+        self.backgroundColor = UIColor.systemGreen
+        
+    }
+    
+    func customButtonBack(view: UIButton) {
+        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor.clear
+        // border
+        view.layer.borderWidth = 0
+        view.layer.borderColor = UIColor.black.cgColor
+        self.backgroundColor = UIColor.clear
+        
     }
 }

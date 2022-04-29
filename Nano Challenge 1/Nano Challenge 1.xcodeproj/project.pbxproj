@@ -20,13 +20,17 @@
 		4C81F64A2819C84C00270A2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6492819C84C00270A2C /* HomeViewController.swift */; };
 		4C81F6562819CA6600270A2C /* PlanContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6542819CA6600270A2C /* PlanContainer.swift */; };
 		4C81F6572819CA6600270A2C /* PlanContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C81F6552819CA6600270A2C /* PlanContainer.xib */; };
-		4C81F65E2819DB4300270A2C /* PlanContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F65D2819DB4300270A2C /* PlanContainerCell.swift */; };
 		4C81F6A5281A516C00270A2C /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6A4281A516C00270A2C /* PlanTableViewCell.swift */; };
 		4C81F6A7281A606900270A2C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6A6281A606900270A2C /* Task.swift */; };
 		4C81F6A9281A63CD00270A2C /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6A8281A63CD00270A2C /* Plan.swift */; };
 		4C81F6AB281A81A700270A2C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6AA281A81A600270A2C /* TaskViewController.swift */; };
-		4C81F6AE281A86EE00270A2C /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6AC281A86EE00270A2C /* Database.xcdatamodeld */; };
+		4C81F6AE281A86EE00270A2C /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6AC281A86EE00270A2C /* CoreData.xcdatamodeld */; };
 		4C81F6B0281A8EBA00270A2C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6AF281A8EBA00270A2C /* TaskTableViewCell.swift */; };
+		4C81F6B2281AAC0200270A2C /* AddPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6B1281AAC0200270A2C /* AddPlanViewController.swift */; };
+		4C81F6B4281AB4A000270A2C /* EditPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81F6B3281AB4A000270A2C /* EditPlanViewController.swift */; };
+		4CC309CE281B0EEB00447420 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC309CD281B0EEB00447420 /* AddTaskViewController.swift */; };
+		4CC309D0281B7C8B00447420 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC309CF281B7C8A00447420 /* EditTaskViewController.swift */; };
+		4CC309D2281B91F500447420 /* DoNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC309D1281B91F500447420 /* DoNowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +68,17 @@
 		4C81F6492819C84C00270A2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4C81F6542819CA6600270A2C /* PlanContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanContainer.swift; sourceTree = "<group>"; };
 		4C81F6552819CA6600270A2C /* PlanContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanContainer.xib; sourceTree = "<group>"; };
-		4C81F65D2819DB4300270A2C /* PlanContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanContainerCell.swift; sourceTree = "<group>"; };
 		4C81F6A4281A516C00270A2C /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
 		4C81F6A6281A606900270A2C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		4C81F6A8281A63CD00270A2C /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		4C81F6AA281A81A600270A2C /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		4C81F6AD281A86EE00270A2C /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		4C81F6AF281A8EBA00270A2C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		4C81F6B1281AAC0200270A2C /* AddPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewController.swift; sourceTree = "<group>"; };
+		4C81F6B3281AB4A000270A2C /* EditPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanViewController.swift; sourceTree = "<group>"; };
+		4CC309CD281B0EEB00447420 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		4CC309CF281B7C8A00447420 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
+		4CC309D1281B91F500447420 /* DoNowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoNowViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,16 +136,20 @@
 				4C81F6A6281A606900270A2C /* Task.swift */,
 				4C81F6A8281A63CD00270A2C /* Plan.swift */,
 				4C81F6A4281A516C00270A2C /* PlanTableViewCell.swift */,
+				4C81F6B3281AB4A000270A2C /* EditPlanViewController.swift */,
 				4C81F6AF281A8EBA00270A2C /* TaskTableViewCell.swift */,
-				4C81F65D2819DB4300270A2C /* PlanContainerCell.swift */,
 				4C81F6582819CA7D00270A2C /* Components */,
 				4C81F6492819C84C00270A2C /* HomeViewController.swift */,
+				4CC309D1281B91F500447420 /* DoNowViewController.swift */,
+				4CC309CD281B0EEB00447420 /* AddTaskViewController.swift */,
+				4C81F6B1281AAC0200270A2C /* AddPlanViewController.swift */,
 				4C81F6AA281A81A600270A2C /* TaskViewController.swift */,
+				4CC309CF281B7C8A00447420 /* EditTaskViewController.swift */,
 				4C81F6472819C19E00270A2C /* SplashViewController.swift */,
 				4C81F61A2817929900270A2C /* Assets.xcassets */,
 				4C81F61C2817929900270A2C /* LaunchScreen.storyboard */,
+				4C81F6AC281A86EE00270A2C /* CoreData.xcdatamodeld */,
 				4C81F61F2817929900270A2C /* Info.plist */,
-				4C81F6AC281A86EE00270A2C /* Database.xcdatamodeld */,
 			);
 			path = "Nano Challenge 1";
 			sourceTree = "<group>";
@@ -301,18 +313,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C81F6A5281A516C00270A2C /* PlanTableViewCell.swift in Sources */,
+				4C81F6B2281AAC0200270A2C /* AddPlanViewController.swift in Sources */,
+				4C81F6B4281AB4A000270A2C /* EditPlanViewController.swift in Sources */,
 				4C81F6B0281A8EBA00270A2C /* TaskTableViewCell.swift in Sources */,
-				4C81F65E2819DB4300270A2C /* PlanContainerCell.swift in Sources */,
+				4CC309CE281B0EEB00447420 /* AddTaskViewController.swift in Sources */,
 				4C81F64A2819C84C00270A2C /* HomeViewController.swift in Sources */,
 				4C81F6162817929800270A2C /* ViewController.swift in Sources */,
 				4C81F6A9281A63CD00270A2C /* Plan.swift in Sources */,
+				4CC309D2281B91F500447420 /* DoNowViewController.swift in Sources */,
 				4C81F6562819CA6600270A2C /* PlanContainer.swift in Sources */,
 				4C81F6122817929800270A2C /* AppDelegate.swift in Sources */,
 				4C81F6142817929800270A2C /* SceneDelegate.swift in Sources */,
 				4C81F6A7281A606900270A2C /* Task.swift in Sources */,
 				4C81F6AB281A81A700270A2C /* TaskViewController.swift in Sources */,
-				4C81F6AE281A86EE00270A2C /* Database.xcdatamodeld in Sources */,
+				4C81F6AE281A86EE00270A2C /* CoreData.xcdatamodeld in Sources */,
 				4C81F6482819C19E00270A2C /* SplashViewController.swift in Sources */,
+				4CC309D0281B7C8B00447420 /* EditTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +507,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Nano Challenge 1/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PlanIt;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -518,6 +535,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Nano Challenge 1/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PlanIt;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -650,13 +668,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4C81F6AC281A86EE00270A2C /* Database.xcdatamodeld */ = {
+		4C81F6AC281A86EE00270A2C /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				4C81F6AD281A86EE00270A2C /* Database.xcdatamodel */,
 			);
 			currentVersion = 4C81F6AD281A86EE00270A2C /* Database.xcdatamodel */;
-			path = Database.xcdatamodeld;
+			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
