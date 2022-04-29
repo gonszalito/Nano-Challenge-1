@@ -8,18 +8,7 @@
 import UIKit
 
 
-protocol AddTaskViewControllerDelegate : AnyObject {
-    func modalControllerWillDisapear(_ modal: AddTaskViewController)
-}
-
-protocol EditTaskViewControllerDelegate : AnyObject {
-    func modalControllerWillDisapear(_ modal: EditPlanViewController)
-}
-
-class TaskViewController: UIViewController {
-    
-//    var tasks = ["Work", "Groceries", "School", "Workout", "Family", "Friends", "Medical", "Do Project"]
-//
+class DoNowViewController: UIViewController {
     
     var tasks : [Task]?
     var pageTitle : String?
@@ -39,18 +28,14 @@ class TaskViewController: UIViewController {
         
         taskTableView.delegate = self
         taskTableView.dataSource = self
-//        taskTableView.dragDelegate = self
+        taskTableView.dragDelegate = self
 
         
         // Do any additional setup after loading the view.
     }
     
     //Delegate
-    private func presentModalController() {
-         let modal = EditPlanViewController()
-         modal.delegate = self
-         self.present(modal, animated: true)
-     }
+
     
     func fetchData() {
         
@@ -81,9 +66,6 @@ class TaskViewController: UIViewController {
         }
     }
     
-    @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "toPlanEditPage", sender: self)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPlanEditPage" {
@@ -97,16 +79,6 @@ class TaskViewController: UIViewController {
             destination.title = self.title
             destination.chosenPlan = self.chosenPlan
             destination.delegate = self
-        case ("toPlanEditPage", let destination as EditPlanViewController):
-            destination.chosenIndex = self.chosenIndex
-            destination.chosenPlan = self.chosenPlan
-            destination.delegate = self
-            destination.pageTitle = "Edit"
-            destination.isUpdate = { [weak self] in
-                self?.fetchData()
-                self?.title = self?.chosenPlan?.title
-                
-            }
           case _:
               break
           }
@@ -131,7 +103,7 @@ class TaskViewController: UIViewController {
 
 }
 
-extension TaskViewController : UITableViewDataSource, UITableViewDelegate{
+extension DoNowViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks?.count ?? 0
     }
@@ -142,14 +114,6 @@ extension TaskViewController : UITableViewDataSource, UITableViewDelegate{
         let task = self.tasks![indexPath.row]
         
         cell.taskTitle.text = task.title
-        if task.isDone == true {
-            cell.buttonHolder.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
-            cell.backgroundColor = UIColor.systemGreen
-        } else {
-            cell.buttonHolder.setImage(UIImage(systemName: "circle"), for: .normal)
-            cell.backgroundColor = UIColor.clear
-        }
-        
         
         return cell
     }
@@ -165,12 +129,12 @@ extension TaskViewController : UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let task = self.tasks![indexPath.row]
-        
-        let action = UIContextualAction(style: .normal, title: "Done") { (action, view, completionHandler) in
+        let action = UIContextualAction(style: .normal, title: "Do Now") { (action, view, completionHandler) in
             
-            task.isDone = true
-            self.chosenPlan?.noTasks -= 1
+            // Which person to remove
+            self.chosenTask = self.tasks![indexPath.row]
+            
+                        
             // Save the data
             do {
                 try self.context.save()
@@ -181,42 +145,17 @@ extension TaskViewController : UITableViewDataSource, UITableViewDelegate{
             // Re-fetch the data
             self.fetchData()
         }
-        action.backgroundColor = UIColor.systemGreen
+        action.backgroundColor = UIColor.systemBlue
         
         // Create swipe action
         let action2 = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
             
             // Which person to remove
+            let task = self.tasks![indexPath.row]
             
-            
-            task.isDone = false
-            self.chosenPlan?.noTasks -= 1
             // Remove the person
             self.context.delete(task)
-            
-            
-            
-            // Save the data
-            do {
-                try self.context.save()
-            } catch {
-                
-            }
-            task.isDone = false
-   
-            // Re-fetch the data
-            self.fetchData()
-        }
-        
-        let action3 = UIContextualAction(style: .destructive, title: "Undo") { (action, view, completionHandler) in
-            
-            // Which person to remove
-            
-            
-            task.isDone = false
-            // Remove the person
-            
-            self.chosenPlan?.noTasks += 1
+            self.chosenPlan?.noTasks -= 1
             
             // Save the data
             do {
@@ -224,18 +163,12 @@ extension TaskViewController : UITableViewDataSource, UITableViewDelegate{
             } catch {
                 
             }
-            task.isDone = false
    
             // Re-fetch the data
             self.fetchData()
         }
-        action3.backgroundColor = UIColor.systemBlue
         
         // Return swipe actions
-        if task.isDone == true{
-            return UISwipeActionsConfiguration(actions: [action2,action3])
-        }
-        
         return UISwipeActionsConfiguration(actions: [action2,action])
     }
     
@@ -244,17 +177,7 @@ extension TaskViewController : UITableViewDataSource, UITableViewDelegate{
     
 }
 
-extension TaskViewController: AddTaskViewControllerDelegate, EditTaskViewControllerDelegate {
-    func modalControllerWillDisapear(_ modal: EditPlanViewController) {
-        fetchData()
-        self.title = chosenPlan?.title
-        taskTableView.dragInteractionEnabled = true
-//        navigationItem.rightBarButtonItem = editButtonItem
-
-        taskTableView.delegate = self
-        taskTableView.dataSource = self
-        
-    }
+extension DoNowViewController: AddTaskViewControllerDelegate {
     
     func modalControllerWillDisapear(_ modal: AddTaskViewController) {
         // This is called when your modal will disappear. You can reload your data.
@@ -272,28 +195,28 @@ extension TaskViewController: AddTaskViewControllerDelegate, EditTaskViewControl
     
   
 }
-//
-//extension TaskViewController : UITableViewDragDelegate {
-//
-//    /**
-//     You have to declare a `UIDragItem` to tell the tableview which object you want to detach from the tableview.
-//     This stub will execute when you first click and hold and detach the cell on the tableview
-//     */
-//    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-//        let dragItem = UIDragItem(itemProvider: NSItemProvider())
-//        dragItem.localObject = tasks![indexPath.row]
-//        return [dragItem]
-//    }
-//
-//
-//    /**
-//     Tell the tableview the source index and the destination index.
-//     This stub will execute when you put the cell on a new position
-//     */
-//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        let mv = tasks![sourceIndexPath.row]
-//        self.tasks?.remove(at: sourceIndexPath.row)
-//        self.tasks?.insert(mv, at: destinationIndexPath.row)
-//    }
-//
-//}
+
+extension DoNowViewController : UITableViewDragDelegate {
+    
+    /**
+     You have to declare a `UIDragItem` to tell the tableview which object you want to detach from the tableview.
+     This stub will execute when you first click and hold and detach the cell on the tableview
+     */
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let dragItem = UIDragItem(itemProvider: NSItemProvider())
+        dragItem.localObject = tasks![indexPath.row]
+        return [dragItem]
+    }
+    
+    
+    /**
+     Tell the tableview the source index and the destination index.
+     This stub will execute when you put the cell on a new position
+     */
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let mv = tasks![sourceIndexPath.row]
+        self.tasks?.remove(at: sourceIndexPath.row)
+        self.tasks?.insert(mv, at: destinationIndexPath.row)
+    }
+    
+}

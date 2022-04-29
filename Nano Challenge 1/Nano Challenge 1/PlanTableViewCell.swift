@@ -9,8 +9,9 @@ import UIKit
 
 class PlanTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var planView: UIView!
+
     @IBOutlet weak var planTitle: UILabel!
+    @IBOutlet weak var planNoTasks: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
